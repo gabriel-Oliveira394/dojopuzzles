@@ -7,17 +7,12 @@ Escreva uma função que determina se um determinado ano informado é bissexto o
 
 ano = int(input("Digite um ano: "))
 
-print(type(ano))
-if ano % 4 == 0:
-    if ano % 100 == 0:
-        if ano % 400 == 0:
-            print(f'O ano {ano} é bissexto!')
+AnoDivQuatro = ano % 4 == 0
+AnoDivCem = ano % 100 == 0
+AnoDivQuatrocentos = ano % 400 == 0
 
-        else:
-            print(f'O ano {ano} não é bissexto!')
-
-    else:
-        print(f'O ano {ano} é bissexto!')
+if (AnoDivQuatro and not AnoDivCem) or (AnoDivQuatro and AnoDivQuatrocentos):
+    print(f'O ano {ano} é bissexto!')
 
 else:
     print(f'O ano {ano} não é bissexto!')
